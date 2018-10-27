@@ -36,6 +36,9 @@ func main() {
 	_, err = conn.Write(msg[0:len])
 	checkErr(err)
 
+	n, _ := conn.Read(msg[0:])
+	//checkErr(err)
+	fmt.Println(n)
 	fmt.Println("Got response")
 	if msg[5] == 13 {
 		fmt.Println("Identifier matches")
